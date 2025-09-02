@@ -11,30 +11,23 @@ namespace Calc
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(",");
 
-                List<double> payments = new List<double>();
-
+                double sum = 0;
                 string paymentColumn = "";
                 while (!parser.EndOfData)
                 {
                     string[] fields = parser.ReadFields();
 
 
-                    paymentColumn = fields[1];
-                    if (Double.TryParse(paymentColumn, out double payment))
-                    {
-                        payments.Add(payment);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Can't parse this line");
-                    }
+                    paymentColumn = fields[0];
+
+                    /*double payment = Convert.ToDouble(paymentColumn);
+                    sum += payment;
+                    Console.WriteLine(sum);
+                    Console.WriteLine(paymentColumn);
+                */
                 }
 
-                Console.WriteLine(payments.Sum());
-                Console.WriteLine(payments.Average());
-                float floatingNumber = 20.94f;
-                floatingNumber += floatingNumber;
-                Console.WriteLine(floatingNumber);
+                Console.WriteLine(paymentColumn);
             }
         }
 
