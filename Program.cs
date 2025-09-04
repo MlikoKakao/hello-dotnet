@@ -6,6 +6,8 @@ namespace Calc
     {
         static void Main(string[] args)
         {
+            RealTestClass.PrintTest();
+            Example.Test();
             Console.WriteLine("How many characters should your password have?");
             string scannedLength = Console.ReadLine();
             int length = 0;
@@ -15,7 +17,6 @@ namespace Calc
             spec = Console.ReadLine().ToLower();
             bool special = spec == "yes";
             PasswordGenerator(length, special);
-
         }
 
 
